@@ -36,6 +36,9 @@
 @import url("swiper.min.css");
 @import url("tm-bs-mp.css");
 @import url("tm-utility-classes.css");
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 :root {
   --theme-color-light: #ffffff;
   --theme-color-dark: #000000;
@@ -108,6 +111,9 @@
   --container-pt: 120px;
   --container-pb: 120px;
 }
+
+
+
 body {
   font-family: 'Roboto', sans-serif !important; /* Thêm !important để ưu tiên áp dụng */
 }
@@ -3812,6 +3818,35 @@ Section Title
     padding-top: 200px;
   }
 }
+
+.banner-section-two .auto-container .inner-column .text-cr {
+  font-family: "Great Vibes", cursive !important;
+  font-size: 70px !important; /* Kích thước chữ mặc định trên màn hình lớn */
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Khi màn hình nhỏ hơn 1024px (Tablet) */
+@media (max-width: 1024px) { 
+  .banner-section-two .auto-container .inner-column .text-cr {
+    font-size: 26px; 
+  }
+}
+
+/* Khi màn hình nhỏ hơn 768px (Mobile ngang) */
+@media (max-width: 768px) { 
+  .banner-section-two .auto-container .inner-column .text-cr {
+    font-size: 28px;
+  }
+}
+
+/* Khi màn hình nhỏ hơn 480px (Mobile dọc) */
+@media (max-width: 480px) { 
+  .banner-section-two .auto-container .inner-column .text-cr {
+    font-size: 20px;
+  }
+}
+
 .banner-section-two .icon-flowers-1 {
   position: absolute;
   bottom: 40px;
@@ -3892,7 +3927,7 @@ Section Title
   font-family: var(--title-font);
   font-weight: 600;
   line-height: 42px;
-  font-size: 32px;
+  font-size: 25px;
   margin-bottom: 30px;
   padding: 10px 0;
   letter-spacing: 10px;
@@ -3901,7 +3936,7 @@ Section Title
 }
 @media (max-width: 1199.98px) {
   .banner-section-two .content-column .inner-column .date {
-    font-size: 26px;
+    font-size: 20px;
   }
 }
 .banner-section-two .content-column .inner-column .address {
