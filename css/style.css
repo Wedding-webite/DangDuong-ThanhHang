@@ -610,21 +610,17 @@ Scroll To Top style
 /*=======================
     List Styles
 =======================*/
-
 .list-style-one {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scrollbar-width: none;
   padding: 10px 0;
-}
-.list-style-one::-webkit-scrollbar {
-  display: none;
 }
 .list-style-one li {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-size: 16px;
   line-height: 30px;
@@ -650,77 +646,44 @@ Scroll To Top style
   color: var(--theme-color1);
 }
 
+.list-style-two {
+  position: relative;
+}
+.list-style-two li {
+  position: relative;
+  margin-bottom: 16px;
+  padding-left: 32px;
+}
+.list-style-two li:last-child {
+  margin-bottom: 0;
+}
+.list-style-two li i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--theme-color-dark);
+  font-size: 16px;
+  border-radius: 50%;
+}
+.list-style-two.light li {
+  color: var(--theme-color-light);
+}
+.list-style-two.two-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.list-style-two.two-column li {
+  width: 50%;
+}
 @media (max-width: 767.98px) {
-  .list-style-one li {
-    flex: 0 0 auto;
-    margin-right: 20px;
-    text-align: center;
-    min-width: 120px;
-    flex-direction: column;
-    align-items: center;
-  }
-  .list-style-one li i {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-  .list-style-one li h4 {
-    font-size: 16px;
-  }
-  .list-style-one {
-    -webkit-overflow-scrolling: touch;
+  .list-style-two.two-column li {
+    width: 100%;
   }
 }
 
-@media (max-width: 767.98px) {
-  .services-section-two .row {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      padding: 10px 0;
-      width: 100%; /* Đảm bảo row chiếm toàn bộ chiều rộng */
-      box-sizing: border-box; /* Đảm bảo padding không làm vượt kích thước */
-      justify-content: center; /* Căn giữa các khối khi không cuộn */
-  }
-
-  .services-section-two .services-block-two {
-      flex: 0 0 auto; /* Không co giãn, giữ kích thước tự nhiên */
-      width: 160px; /* Chiều rộng cố định */
-      min-width: 160px; /* Đảm bảo không bị co nhỏ hơn */
-      margin-right: 15px; /* Khoảng cách giữa các khối */
-      text-align: center; /* Căn giữa nội dung bên trong */
-  }
-
-  .services-section-two .services-block-two .inner-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Căn giữa nội dung trong inner-box */
-      width: 100%; /* Đảm bảo inner-box không vượt quá block */
-  }
-
-  .services-section-two .services-block-two .content-box {
-      margin-top: 10px;
-  }
-
-  .services-section-two .services-block-two h4 {
-      font-size: 14px; /* Kích thước chữ vừa phải */
-      margin: 0; /* Loại bỏ margin mặc định nếu có */
-  }
-
-  /* Ẩn thanh cuộn nhưng vẫn cho phép cuộn */
-  .services-section-two .row {
-      -webkit-overflow-scrolling: touch; /* Cuộn mượt trên iOS */
-      scrollbar-width: none; /* Ẩn thanh cuộn trên Firefox */
-  }
-  .services-section-two .row::-webkit-scrollbar {
-      display: none; /* Ẩn thanh cuộn trên Chrome/Safari */
-  }
-
-  /* Đảm bảo khối cuối không bị khuất */
-  .services-section-two .services-block-two:last-child {
-      margin-right: 0; /* Loại bỏ margin-right ở khối cuối */
-  }
-}
 /*===========================
     Social Icons Styles
 ============================*/
@@ -3900,12 +3863,12 @@ Section Title
   font-family: var(--script-font);
   font-weight: 400;
   line-height: 1.4em;
-  font-size: 60px;
+  font-size: 50px;
   margin-bottom: 25px;
 }
 @media (max-width: 1199.98px) {
   .banner-section-two .content-column .inner-column .name {
-    font-size: 56px;
+    font-size: 50px;
     line-height: 60px;
   }
 }
