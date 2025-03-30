@@ -3843,7 +3843,7 @@ Section Title
 /* Khi màn hình nhỏ hơn 480px (Mobile dọc) */
 @media (max-width: 480px) { 
   .banner-section-two .auto-container .inner-column .text-cr {
-    font-size: 16px !important;
+    font-size: 56px !important;
   }
 }
 
