@@ -718,7 +718,7 @@ const end = Date.now() + 20000; // Chạy trong 15 giây
     particleCount: 4, // Giảm số lượng nhưng bắn liên tục
     angle: Math.random() * 360, // Bắn theo mọi hướng
     spread: 360, // Tản ra toàn màn hình
-    startVelocity: 55 + Math.random() * 20, // Bay nhanh hơn
+    startVelocity: 55 + Math.random() * 10, // Bay nhanh hơn
     decay: 0.92,
     drift: (Math.random() - 0.5) * 8, // Bay lệch mạnh hơn
     scalar: Math.random() * 0.6 + 0.1, // Kích thước nhỏ hơn nhưng đa dạng
@@ -727,7 +727,7 @@ const end = Date.now() + 20000; // Chạy trong 15 giây
   });
 
   if (Date.now() < end) {
-    setTimeout(frame, 20); // Giữ hiệu ứng nhưng bắn từ nhiều vị trí
+    setTimeout(frame, 10); // Giữ hiệu ứng nhưng bắn từ nhiều vị trí
   }
 })();
 // Gọi lại pháo giấy mỗi 30 giây
