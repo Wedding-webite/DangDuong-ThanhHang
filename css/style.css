@@ -3925,18 +3925,18 @@ Section Title
   display: inline-block;
   color: var(--theme-color-dark);
   font-family: var(--title-font);
-  font-weight: 600;
+  font-weight: 550;
   line-height: 42px;
-  font-size: 25px;
+  font-size: 35px;
   margin-bottom: 30px;
   padding: 10px 0;
-  letter-spacing: 10px;
-  border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
+  letter-spacing: 8px;
+  border-top: 2px solid #0000009f;
+  border-bottom: 2px solid #0000009f;
 }
 @media (max-width: 1199.98px) {
   .banner-section-two .content-column .inner-column .date {
-    font-size: 20px;
+    font-size: 30px;
   }
 }
 .banner-section-two .content-column .inner-column .address {
@@ -3945,7 +3945,7 @@ Section Title
   font-family: var(--text-font);
   font-weight: 500;
   line-height: 1.2em;
-  font-size: 16px;
+  font-size: 22px;
 }
 .banner-section-two .content-column .inner-column .address .icon {
   font-size: 18px;

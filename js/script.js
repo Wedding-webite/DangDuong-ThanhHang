@@ -708,3 +708,28 @@ var THEMEMASCOT = {};
 	});	
 
 })(window.jQuery);
+
+
+const colors = ["#bb0000", "#ffffff", "#ff0000"]; // Màu sắc
+const end = Date.now() + 20000; // Chạy trong 15 giây
+
+(function frame() {
+  confetti({
+    particleCount: 4, // Giảm số lượng nhưng bắn liên tục
+    angle: Math.random() * 360, // Bắn theo mọi hướng
+    spread: 360, // Tản ra toàn màn hình
+    startVelocity: 55 + Math.random() * 20, // Bay nhanh hơn
+    decay: 0.92,
+    drift: (Math.random() - 0.5) * 8, // Bay lệch mạnh hơn
+    scalar: Math.random() * 0.6 + 0.1, // Kích thước nhỏ hơn nhưng đa dạng
+    origin: { x: Math.random(), y: Math.random() * 0.2 }, // Phân tán điểm bắn rộng hơn
+    colors: colors,
+  });
+
+  if (Date.now() < end) {
+    setTimeout(frame, 20); // Giữ hiệu ứng nhưng bắn từ nhiều vị trí
+  }
+})();
+// Gọi lại pháo giấy mỗi 30 giây
+startConfetti(); // Chạy lần đầu
+setInterval(startConfetti, 30000); // Lặp lại mỗi 30 giây
