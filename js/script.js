@@ -711,25 +711,29 @@ var THEMEMASCOT = {};
 
 
 const colors = ["#bb0000", "#ffffff", "#ff0000"]; // Màu sắc
-const end = Date.now() + 20000; // Chạy trong 15 giây
+const isMobile = window.innerWidth < 768; // Kiểm tra thiết bị di động
+const end = Date.now() + 20000; // Chạy trong 20 giây
 
-(function frame() {
-  confetti({
-    particleCount: 4, // Giảm số lượng nhưng bắn liên tục
-    angle: Math.random() * 360, // Bắn theo mọi hướng
-    spread: 360, // Tản ra toàn màn hình
-    startVelocity: 55 + Math.random() * 10, // Bay nhanh hơn
-    decay: 0.92,
-    drift: (Math.random() - 0.5) * 8, // Bay lệch mạnh hơn
-    scalar: Math.random() * 0.6 + 0.1, // Kích thước nhỏ hơn nhưng đa dạng
-    origin: { x: Math.random(), y: Math.random() * 0.2 }, // Phân tán điểm bắn rộng hơn
-    colors: colors,
-  });
+function startConfetti() {
+  (function frame() {
+    confetti({
+      particleCount: isMobile ? 6 : 4, // Mobile nhiều hơn để bù kích thước nhỏ
+      angle: Math.random() * 360, // Bắn theo mọi hướng
+      spread: 380, // Tản ra toàn màn hình
+      startVelocity: isMobile ? 35 : 55, // Mobile bay chậm hơn để mượt
+      decay: 0.94, // Giảm dần tốc độ mượt hơn
+      drift: (Math.random() - 0.5) * 6, // Bay lệch tự nhiên hơn
+      scalar: Math.random() * (isMobile ? 0.8 : 0.6) + 0.1, // Mobile lớn hơn chút để dễ thấy
+      origin: { x: Math.random(), y: Math.random() * 0.2 }, // Phân tán điểm bắn rộng hơn
+      colors: colors,
+    });
 
-  if (Date.now() < end) {
-    setTimeout(frame, 10); // Giữ hiệu ứng nhưng bắn từ nhiều vị trí
-  }
-})();
+    if (Date.now() < end) {
+      setTimeout(frame, isMobile ? 15 : 10); // Mobile delay lâu hơn để tránh lag
+    }
+  })();
+}
+
 // Gọi lại pháo giấy mỗi 30 giây
 startConfetti(); // Chạy lần đầu
 setInterval(startConfetti, 30000); // Lặp lại mỗi 30 giây
