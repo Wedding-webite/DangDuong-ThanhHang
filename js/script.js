@@ -712,28 +712,34 @@ var THEMEMASCOT = {};
 
 const colors = ["#bb0000", "#ffffff", "#ff0000"]; // Màu sắc
 const isMobile = window.innerWidth < 768; // Kiểm tra thiết bị di động
-const end = Date.now() + 20000; // Chạy trong 20 giây
+const duration = 20000; // 20 giây
 
 function startConfetti() {
+  const end = Date.now() + duration; // Thời gian kết thúc mới
+
   (function frame() {
     confetti({
-      particleCount: isMobile ? 6 : 4, // Mobile nhiều hơn để bù kích thước nhỏ
-      angle: Math.random() * 360, // Bắn theo mọi hướng
-      spread: 380, // Tản ra toàn màn hình
-      startVelocity: isMobile ? 35 : 55, // Mobile bay chậm hơn để mượt
-      decay: 0.94, // Giảm dần tốc độ mượt hơn
-      drift: (Math.random() - 0.5) * 6, // Bay lệch tự nhiên hơn
-      scalar: Math.random() * (isMobile ? 0.8 : 0.6) + 0.1, // Mobile lớn hơn chút để dễ thấy
-      origin: { x: Math.random(), y: Math.random() * 0.2 }, // Phân tán điểm bắn rộng hơn
+      particleCount: isMobile ? 8 : 4, // Mobile tăng số lượng
+      angle: Math.random() * 360, // Bay theo mọi hướng
+      spread: 400, // Mở rộng hơn
+      startVelocity: isMobile ? 30 : 50, // Mobile chậm hơn để nhìn rõ
+      decay: 0.96, // Giảm tốc từ từ
+      gravity: 0.6, // Làm rơi chậm hơn
+      drift: (Math.random() - 0.5) * 4, // Bay lệch tự nhiên hơn
+      scalar: Math.random() * (isMobile ? 0.9 : 0.6) + 0.2, // Mobile to hơn để dễ thấy
+      ticks: 200, // Hiệu ứng kéo dài lâu hơn
+      origin: { x: Math.random(), y: Math.random() * 0.3 }, // Phân tán nhiều hơn
       colors: colors,
     });
 
     if (Date.now() < end) {
-      setTimeout(frame, isMobile ? 15 : 10); // Mobile delay lâu hơn để tránh lag
+      requestAnimationFrame(frame);
     }
   })();
 }
 
-// Gọi lại pháo giấy mỗi 30 giây
-startConfetti(); // Chạy lần đầu
-setInterval(startConfetti, 30000); // Lặp lại mỗi 30 giây
+// Gọi lần đầu
+startConfetti();
+
+// Lặp lại mỗi 30 giây
+setInterval(startConfetti, 30000);
