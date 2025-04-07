@@ -711,11 +711,11 @@ var THEMEMASCOT = {};
 
 
 const colors = ["#bb0000", "#ffffff", "#ff0000"]; // Màu sắc
-const end = Date.now() + 20000; // Chạy trong 15 giây
+const end = Date.now() + 6000; // Chạy trong 15 giây
 
 (function frame() {
   confetti({
-    particleCount: 4, // Giảm số lượng nhưng bắn liên tục
+    particleCount: 2, // Giảm số lượng nhưng bắn liên tục
     angle: Math.random() * 360, // Bắn theo mọi hướng
     spread: 360, // Tản ra toàn màn hình
     startVelocity: 55 + Math.random() * 10, // Bay nhanh hơn
