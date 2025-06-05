@@ -3807,6 +3807,13 @@ Section Title
 ====================================================================
 
 ***/
+ .name-cdcr {
+  font-family: "Great Vibes", cursive !important;
+  font-size: 40px;
+  font-weight: 300;
+}
+
+
 .banner-section-two {
   position: relative;
   background-color: #fafafa;
