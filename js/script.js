@@ -198,8 +198,8 @@ var THEMEMASCOT = {};
 			margin: 30,
 			nav: true,
 			items: 1,
-    		smartSpeed: 800, // Tăng tốc độ chuyển đổi để mượt mà hơn
-			autoplay: 5000,
+			smartSpeed: 500,
+			autoplay: 1000,
 			navText: ['<span class="far fa-arrow-left"></span>', '<span class="far fa-arrow-right"></span>'],
 			responsive: {
 				0: {
@@ -218,18 +218,9 @@ var THEMEMASCOT = {};
 		});
 	}
 
-	// Xử lý sự kiện khi người dùng lướt
-$(window).on('scroll', function() {
-    var scrollPosition = $(this).scrollTop(); // Lấy vị trí cuộn của trang
-    var scrollThreshold = 100; // Vị trí cuộn cần để chuyển ảnh
-
-    if (scrollPosition > scrollThreshold) {
-        // Nếu vị trí cuộn lớn hơn ngưỡng, chuyển sang slide tiếp theo
-        $('.four-items-carousel').trigger('next.owl.carousel');
-    }
-});
-
 	
+
+
 	//Clients Carousel
 	if ($('.clients-carousel').length) {
 		$('.clients-carousel').owlCarousel({
@@ -238,7 +229,7 @@ $(window).on('scroll', function() {
 			margin: 0,
 			nav: false,
 			smartSpeed: 400,
-			autoplay: true,
+			autoplay: 1000,
 			navText: ['<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>'],
 			responsive: {
 				0: {
@@ -335,7 +326,7 @@ $(window).on('scroll', function() {
 			nav: true,
 			items: 1,
 			smartSpeed: 700,
-			autoplay: 5000,
+			autoplay: 1000,
 			responsive: {
 				0: {
 					items: 1
@@ -404,7 +395,7 @@ $(window).on('scroll', function() {
 			nav: true,
 			items: 1,
 			smartSpeed: 700,
-			autoplay: 5000,
+			autoplay: 1000,
 			responsive: {
 				0: {
 					items: 1
