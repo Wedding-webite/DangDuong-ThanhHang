@@ -3813,6 +3813,14 @@ Section Title
   font-weight: 300;
 }
 
+ .name-cdcr2 {
+  font-family: "Great Vibes", cursive !important;
+  color: #000;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
 
 .banner-section-two {
   position: relative;
@@ -4128,7 +4136,7 @@ Section Title
       -ms-flex-pack: center;
           justify-content: center;
 }
-@media (max-width: 575.98px) {
+/* @media (max-width: 575.98px) {
   .countdown-section-two .time-counter .time-countdown {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4141,7 +4149,7 @@ Section Title
         -ms-flex-align: center;
             align-items: center;
   }
-}
+} */
 .countdown-section-two .time-counter .time-countdown .counter-column {
   position: relative;
   max-width: 250px;
@@ -4149,11 +4157,11 @@ Section Title
   padding: 0 32px;
   border-left: 1px solid #d6d6d6;
 }
-@media (max-width: 575.98px) {
+/* @media (max-width: 575.98px) {
   .countdown-section-two .time-counter .time-countdown .counter-column {
     border-left: 0;
   }
-}
+} */
 .countdown-section-two .time-counter .time-countdown .counter-column:first-child {
   border-left: 0;
 }
