@@ -198,7 +198,7 @@ var THEMEMASCOT = {};
 			margin: 30,
 			nav: true,
 			items: 1,
-			smartSpeed: 700,
+    		smartSpeed: 800, // Tăng tốc độ chuyển đổi để mượt mà hơn
 			autoplay: 5000,
 			navText: ['<span class="far fa-arrow-left"></span>', '<span class="far fa-arrow-right"></span>'],
 			responsive: {
@@ -218,6 +218,18 @@ var THEMEMASCOT = {};
 		});
 	}
 
+	// Xử lý sự kiện khi người dùng lướt
+$(window).on('scroll', function() {
+    var scrollPosition = $(this).scrollTop(); // Lấy vị trí cuộn của trang
+    var scrollThreshold = 100; // Vị trí cuộn cần để chuyển ảnh
+
+    if (scrollPosition > scrollThreshold) {
+        // Nếu vị trí cuộn lớn hơn ngưỡng, chuyển sang slide tiếp theo
+        $('.four-items-carousel').trigger('next.owl.carousel');
+    }
+});
+
+	
 	//Clients Carousel
 	if ($('.clients-carousel').length) {
 		$('.clients-carousel').owlCarousel({

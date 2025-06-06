@@ -15,6 +15,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 <link rel="icon" href="images/favicon.png" type="image/x-icon">
+<!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<!-- WOW.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -22,6 +28,7 @@
 </head>
 
 <body 
+
 ><div class="page-wrapper">
 
     <!-- Preloader -->
@@ -322,7 +329,7 @@
                 
 
             <!-- Event Block -->
-            <div class="event-block-two style-two wow fadeInLeft" data-wow-delay="200ms">
+            <div class="event-block-two style-two wow bounceInUp" data-wow-delay="200ms">
                 <div class="inner-box">
                     <div class="date-column">
                         <div class="date-box">
@@ -444,7 +451,7 @@
             </div>
 
             <!-- Image Column -->
-            <div class="image-column col-xl-7 col-lg-6 col-md-12 wow fadeInRight" data-wow-delay="200ms">
+            <div class="image-column col-xl-7 col-lg-6 col-md-12 wow bounceInUp" data-wow-delay="200ms">
                 <div class="inner-column">
                     <div class="image-box">
                         <figure class="image overlay-anim"><a href="images/resource/contact2-1.jpg" class="lightbox-image" data-fancybox=""><img src="images/resource/contact2-1.jpg" alt="Image"></a></figure>
@@ -473,7 +480,7 @@
             
             <h2>KHOẢNH KHẮC ĐÁNG NHỚ</h2>
         </div> -->
-        <div class="four-items-carousel owl-carousel owl-theme default-navs">
+        <div class="four-items-carousel owl-carousel owl-theme default-navs" class="gallery-block-three col-lg-6 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.2s">
 
             <!-- Team block -->
             <div class="team-block-two">
@@ -583,16 +590,16 @@
     <div class="auto-container">
         <div class="row">
             <!-- Left Column -->
-            <div class="left-column col-lg-6 col-md-12 col-sm-12 wow fadeInLeft">
+            <div class="left-column col-lg-6 col-md-12 col-sm-12 wow zoomIn">
                 <div class="sec-title style-two">
                     <!-- <span class="sub-title">Sweet Memories</span> -->
                     <div class="name-cdcr2">“Phút Giây Ngọt Ngào & <br>Khoảnh Khắc Đẹp”</div>
                 </div>
                 <div class="row">
                     <!-- Gallery Block -->
-                    <div class="gallery-block-three col-lg-6 col-md-6 col-sm-6">
+                    <div class="gallery-block-three col-lg-6 col-md-6 col-sm-6" >
                         <div class="inner-box">
-                            <figure class="image overlay-anim"><a href="images/resource/gallery3-1.jpg" class="lightbox-image" data-fancybox="gallery"><img src="images/resource/gallery3-1.jpg" alt="Image"></a></figure>
+                            <figure class="image overlay-anim" ><a href="images/resource/gallery3-1.jpg" class="lightbox-image" data-fancybox="gallery"><img src="images/resource/gallery3-1.jpg" alt="Image"></a></figure>
                         </div>
                     </div>
                     
@@ -613,7 +620,8 @@
             </div>
             
             <!-- Right Column -->
-            <div class="right-column col-lg-6 col-md-12 col-sm-12 wow fadeInRight">
+
+            <div class="right-column col-lg-6 col-md-12 col-sm-12 wow bounceInUp">
                 <div class="row">
                     
                     <!-- Gallery Block -->
@@ -882,6 +890,10 @@
   <source src="https://wedding-webite.github.io/DangDuong-ThanhHang/images/i-do.mp3" type="audio/mpeg">
   Trình duyệt của bạn không hỗ trợ phát nhạc.
 </audio>
+
+<script>
+  new WOW().init();
+</script>
 
 <script>
   const music = document.getElementById("background-music");
