@@ -730,9 +730,10 @@ const end = Date.now() + 6000; // Chạy trong 15 giây
   });
 
   if (Date.now() < end) {
-    setTimeout(frame, 10); // Giữ hiệu ứng nhưng bắn từ nhiều vị trí
+    requestAnimationFrame(frame); // Dùng requestAnimationFrame để tối ưu hiệu suất trên màn hình 120Hz
   }
 })();
-// Gọi lại pháo giấy mỗi 30 giây 
+
+// Gọi lại pháo giấy mỗi 30 giây
 startConfetti(); // Chạy lần đầu
-setInterval(startConfetti, 30000); // Lặp lại mỗi 30 giây
+setInterval(startConfetti, 50000); // Lặp lại mỗi 30 giây
