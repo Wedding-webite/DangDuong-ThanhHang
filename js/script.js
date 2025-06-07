@@ -714,26 +714,34 @@ var THEMEMASCOT = {};
 
 
 const colors = ["#bb0000", "#ffffff", "#ff0000"]; // Màu sắc
-const end = Date.now() + 6000; // Chạy trong 15 giây
+const end = Date.now() + 6000; // Chạy trong 6 giây
 
-(function frame() {
-  confetti({
-    particleCount: 10, // Giảm số lượng nhưng bắn liên tục
-    angle: Math.random() * 360, // Bắn theo mọi hướng
-    spread: 360, // Tản ra toàn màn hình
-    startVelocity: 55 + Math.random() * 10, // Bay nhanh hơn
-    decay: 0.92,
-    drift: (Math.random() - 0.5) * 8, // Bay lệch mạnh hơn
-    scalar: Math.random() * 0.6 + 0.1, // Kích thước nhỏ hơn nhưng đa dạng
-    origin: { x: Math.random(), y: Math.random() * 0.2 }, // Phân tán điểm bắn rộng hơn
-    colors: colors,
-  });
+// Điều chỉnh các tham số cho mobile
+const isMobile = window.innerWidth <= 768; // Kiểm tra nếu màn hình có kích thước nhỏ (mobile)
 
-  if (Date.now() < end) {
-    requestAnimationFrame(frame); // Dùng requestAnimationFrame để tối ưu hiệu suất trên màn hình 120Hz
-  }
-})();
+// Hàm gọi pháo giấy
+function startConfetti() {
+  (function frame() {
+    confetti({
+      particleCount: 10, // Giảm số lượng nhưng bắn liên tục
+      angle: Math.random() * 360, // Bắn theo mọi hướng
+      spread: 360, // Tản ra toàn màn hình
+      startVelocity: isMobile ? 30 + Math.random() * 5 : 55 + Math.random() * 10, // Tốc độ bay chậm hơn trên mobile
+      decay: 0.92,
+      drift: (Math.random() - 0.5) * 8, // Bay lệch mạnh hơn
+      scalar: Math.random() * 0.6 + 0.1, // Kích thước nhỏ hơn nhưng đa dạng
+      origin: { x: Math.random(), y: Math.random() * 0.2 }, // Phân tán điểm bắn rộng hơn
+      colors: colors,
+    });
 
-// Gọi lại pháo giấy mỗi 30 giây
-startConfetti(); // Chạy lần đầu
-setInterval(startConfetti, 50000); // Lặp lại mỗi 30 giây
+    if (Date.now() < end) {
+      requestAnimationFrame(frame); // Dùng requestAnimationFrame để tối ưu hiệu suất trên màn hình 120Hz
+    }
+  })();
+}
+
+// Gọi pháo giấy lần đầu
+startConfetti();
+
+// Lặp lại việc gọi pháo giấy mỗi 50 giây
+setInterval(startConfetti, 50000); // Lặp lại mỗi 50 giây
