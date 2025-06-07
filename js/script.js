@@ -714,7 +714,7 @@ var THEMEMASCOT = {};
 
 
 const colors = ["#bb0000", "#ffffff", "#ff0000"]; // Màu sắc
-const end = Date.now() + 6000; // Chạy trong 6 giây
+const end = Date.now() + 8000; // Chạy trong 6 giây
 
 // Điều chỉnh các tham số cho mobile
 const isMobile = window.innerWidth <= 768; // Kiểm tra nếu màn hình có kích thước nhỏ (mobile)
@@ -723,12 +723,11 @@ const isMobile = window.innerWidth <= 768; // Kiểm tra nếu màn hình có k�
 function startConfetti() {
   (function frame() {
     confetti({
-      particleCount: 10, // Giảm số lượng nhưng bắn liên tục
-      angle: Math.random() * 360, // Bắn theo mọi hướng
-      spread: 360, // Tản ra toàn màn hình
-      startVelocity: isMobile ? 30 + Math.random() * 5 : 55 + Math.random() * 10, // Tốc độ bay chậm hơn trên mobile
-      decay: 0.92,
-      drift: (Math.random() - 0.5) * 8, // Bay lệch mạnh hơn
+      particleCount: isMobile ? 30 : 10, // Tăng số lượng hạt pháo giấy gấp 3 lần trên mobile
+      spread: isMobile ? 180 : 360, // Giảm độ tản ra trên mobile
+      startVelocity: isMobile ? 5 + Math.random() * 3 : 55 + Math.random() * 150, // Tốc độ bay chậm hơn trên mobile
+      decay: 0.995, // Giảm tốc độ hao mòn để hạt tồn tại lâu hơn
+      drift: (Math.random() - 0.5) * 2, // Rơi từ từ với ít lệch hơn
       scalar: Math.random() * 0.6 + 0.1, // Kích thước nhỏ hơn nhưng đa dạng
       origin: { x: Math.random(), y: Math.random() * 0.2 }, // Phân tán điểm bắn rộng hơn
       colors: colors,
