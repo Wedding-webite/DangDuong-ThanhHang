@@ -3709,7 +3709,7 @@ Section Title
 }
 @media (max-width: 767.98px) {
   .sec-title.style-two h2 {
-    font-size: 38px;
+    font-size: 30px;
   }
 }
 @media (max-width: 767.98px) {
@@ -3932,7 +3932,7 @@ Section Title
 }
 @media (max-width: 1199.98px) {
   .banner-section-two .content-column .inner-column .name span {
-    font-size: 90px;
+    font-size: 80px;
   }
 }
 .banner-section-two .content-column .inner-column .date {
