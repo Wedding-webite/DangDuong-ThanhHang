@@ -3951,7 +3951,7 @@ Section Title
 }
 @media (max-width: 1199.98px) {
   .banner-section-two .content-column .inner-column .date {
-    font-size: 30px;
+    font-size: 28px;
   }
 }
 .banner-section-two .content-column .inner-column .address {
@@ -3960,7 +3960,7 @@ Section Title
   font-family: var(--text-font);
   font-weight: 500;
   line-height: 1.2em;
-  font-size: 22px;
+  font-size: 20px;
 }
 .banner-section-two .content-column .inner-column .address .icon {
   font-size: 18px;
