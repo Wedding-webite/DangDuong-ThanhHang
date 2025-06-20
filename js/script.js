@@ -713,34 +713,38 @@ var THEMEMASCOT = {};
 })(window.jQuery);
 
 
-const colors = ["#bb0000", "#ffffff", "#ff0000"]; // Màu sắc
-const end = Date.now() + 8000; // Chạy trong 6 giây
+const colors = ["#bb0000", "#ffffff", "#ff0000"];
 
-// Điều chỉnh các tham số cho mobile
-const isMobile = window.innerWidth <= 768; // Kiểm tra nếu màn hình có kích thước nhỏ (mobile)
+// Kiểm tra nếu là thiết bị mobile (màn hình nhỏ hơn hoặc bằng 768px)
+const isMobile = window.innerWidth <= 768;
 
-// Hàm gọi pháo giấy
+// Hàm kích hoạt pháo giấy
 function startConfetti() {
+  const end = Date.now() + 8000; // Thời gian chạy trong 8 giây tính từ thời điểm gọi hàm
+
   (function frame() {
     confetti({
-      particleCount: isMobile ? 30 : 10, // Tăng số lượng hạt pháo giấy gấp 3 lần trên mobile
-      spread: isMobile ? 180 : 360, // Giảm độ tản ra trên mobile
-      startVelocity: isMobile ? 5 + Math.random() * 3 : 55 + Math.random() * 150, // Tốc độ bay chậm hơn trên mobile
-      decay: 0.995, // Giảm tốc độ hao mòn để hạt tồn tại lâu hơn
-      drift: (Math.random() - 0.5) * 2, // Rơi từ từ với ít lệch hơn
-      scalar: Math.random() * 0.6 + 0.1, // Kích thước nhỏ hơn nhưng đa dạng
-      origin: { x: Math.random(), y: Math.random() * 0.2 }, // Phân tán điểm bắn rộng hơn
-      colors: colors,
+      particleCount: isMobile ? 30 : 10, // Số hạt: mobile nhiều hơn
+      spread: isMobile ? 180 : 360,      // Độ tỏa ra: mobile hẹp hơn
+      startVelocity: isMobile ? 5 + Math.random() * 3 : 55 + Math.random() * 150, // Tốc độ bắn
+      decay: 0.995,                      // Tốc độ tàn pháo
+      drift: (Math.random() - 0.5) * 2,  // Độ lệch ngang
+      scalar: Math.random() * 0.6 + 0.1, // Kích thước hạt
+      origin: {
+        x: Math.random(),               // Vị trí X ngẫu nhiên
+        y: Math.random() * 0.2          // Vị trí Y phía trên
+      },
+      colors: colors,                    // Màu sắc
     });
 
     if (Date.now() < end) {
-      requestAnimationFrame(frame); // Dùng requestAnimationFrame để tối ưu hiệu suất trên màn hình 120Hz
+      requestAnimationFrame(frame);     // Tiếp tục loop nếu chưa hết 8s
     }
   })();
 }
 
-// Gọi pháo giấy lần đầu
+// Gọi pháo giấy lần đầu khi trang load
 startConfetti();
 
-// Lặp lại việc gọi pháo giấy mỗi 50 giây
-setInterval(startConfetti, 50000); // Lặp lại mỗi 50 giây
+// Gọi lại pháo giấy mỗi 50 giây
+setInterval(startConfetti, 40000);
