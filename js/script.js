@@ -748,3 +748,16 @@ startConfetti();
 
 // Gọi lại pháo giấy mỗi 50 giây
 setInterval(startConfetti, 40000);
+
+
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const form = e.target;
+    fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+    }).then(() => {
+      alert("Gửi thành công!");
+      form.reset();
+    });
+  });
