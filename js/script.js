@@ -750,14 +750,28 @@ startConfetti();
 setInterval(startConfetti, 40000);
 
 
-  document.getElementById("contact-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const form = e.target;
-    fetch(form.action, {
-      method: "POST",
-      body: new FormData(form),
-    }).then(() => {
-      alert("Gửi thành công!");
-      form.reset();
+// gửi form lời chúc
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Chặn load trang
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+      })
+      .then(response => {
+        if (response.ok) {
+          alert("🎉 Gửi lời chúc thành công!");
+          form.reset();
+        } else {
+          alert("⚠️ Có lỗi xảy ra. Vui lòng thử lại!");
+        }
+      })
+      .catch(error => {
+        alert("❌ Không thể gửi. Lỗi kết nối.");
+        console.error("Send error:", error);
+      });
     });
   });
